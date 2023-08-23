@@ -12,8 +12,6 @@ export class App extends Component {
       { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
     ],
     filter: '',
-    name: '',
-    number: '',
   };
 
   handleAddContact = contactNew => {
@@ -35,10 +33,9 @@ export class App extends Component {
 
   getFilteredContacts = () => {
     const { filter, contacts } = this.state;
-    const filteredContacts = [...contacts].filter(({ name }) =>
+    return contacts.filter(({ name }) =>
       name.toLowerCase().includes(filter.toLowerCase())
     );
-    return filteredContacts;
   };
 
   handleDeleteContact = contactId => {
